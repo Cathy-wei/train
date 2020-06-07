@@ -1,2 +1,2 @@
 Git is a free system
-git是个好控制系统
+git is a distribution version system
