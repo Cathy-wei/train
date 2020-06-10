@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>咖啡flex版本</title>
+</head>
+<style>
+    #container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    h1 {
+        background-color: #8673ca;
+        padding: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    
+    #content {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    #menu {
+        width: 40%;
+        float: left;
+        list-style: none;
+        background-color: #d6cef1ec;
+        box-sizing: border-box;
+    }
+    
+    #menu ul {
+        padding: 0px;
+    }
+    
+    #menu ul>li {
+        display: block;
+        padding: 10px;
+        list-style: none;
+    }
+    
+    #menu ul>li a {
+        display: block;
+    }
+    
+    #menu ul>li:hover {
+        background-color: #a99dd1ad;
+        cursor: pointer;
+    }
+    
+    #menu ul>li:not(:last-child) {
+        border-bottom: #8673ca solid 2px;
+    }
+    
+    #items {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+    
+    #foot {
+        background-color: #8673ca;
+        text-align: center;
+    }
+    
+    table tr td:last-child::before {
+        content: "￥";
+    }
+    
+    .coffee {
+        width: 20%;
+    }
+    
+    #items p {
+        text-indent: 2em;
+    }
+    
+    #items p::first-letter {
+        font-size: 32px;
+    }
+</style>
+
+<body style="margin: 0px;">
+    <div id="container">
+
+
+        <h1>☕来杯咖啡吗？</h1>
+
+        <div id="content">
+            <div id="menu">
+                <ul>
+                    <li><a href="a.html">拿铁</a></li>
+                    <li><a href="b.html">卡布奇诺</a></li>
+                    <li>澳瑞白</li>
+                    <li>美食咖啡</li>
+                    <li>焦糖玛奇朵</li>
+                </ul>
+
+            </div>
+            <div id="items">
+                <div style="margin:10px 24%;">
+                    <img width="100%" src="https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00392-4060.jpg" alt="展示图片" />
+
+                    <table border="1" width="100%" style="border-collapse: collapse;">
+                        <tr>
+                            <th>咖啡</th>
+                            <th>价格</th>
+                        </tr>
+                        <tr>
+                            <td>拿铁</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>美式咖啡</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>卡布奇诺</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>焦糖玛奇朵</td>
+                            <td>24</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3>拿铁</h3>
+                    <img src="imgs/pic1.jpg" class="coffee" />
+                    <p>
+                        “拿铁”是意大利文“Latte”的音译，拿铁咖啡拿铁咖啡(6张)拿铁咖啡(CoffeeLatte)是花式咖啡的一种，是咖啡与牛奶交融的极至之作。意式拿铁咖啡为纯牛奶加咖啡，美式拿铁则将部分牛奶替换成奶泡，本地的拿铁多为此种。那句著名的“我不在咖啡馆，就在去咖啡馆的路上”是一位音乐家在维也纳说出来的。维也纳的空气里，永远都飘荡着音乐和拿铁(Latte)咖啡的味道。
+                    </p>
+                </div>
+                <div>
+                    <h3>美式咖啡</h3>
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1698970993,4119272671&fm=26&gp=0.jpg" class="coffee" />
+                    <p>
+                        “美式咖啡”（英文：Americano，意大利语：Caffè Americano）咖啡的一种，是最普通的咖啡。是使用滴滤式咖啡壶所制作出的黑咖啡，又或者是意式浓缩中加入大量的水制成。 美式咖啡口味比较淡。因为一般的萃取时间相对较长（大概四五分钟），所以咖啡因含量较高。
+                    </p>
+                </div>
+                <div>
+                    <h3>卡布奇诺</h3>
+                    <img src="https://bkimg.cdn.bcebos.com/pic/bba1cd11728b47107b7935d0cbcec3fdfc03235c?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2UxMTY=,xp_5,yp_5" class="coffee" />
+                    <p>
+                        20世纪初期，意大利人阿奇布夏发明蒸汽压力咖啡机的同时，也发展出了卡布奇诺咖啡。 卡布奇诺是一种加入以同量的意大利特浓咖啡和蒸汽泡沫牛奶相混合的意大利咖啡。此时咖啡的颜色，就像卡布奇诺教会的修士在深褐色的外衣上覆上一条头巾一样，咖啡因此得名。传统的卡布奇诺咖啡是三分之一浓缩咖啡，三分之一蒸汽牛奶和三分之一泡沫牛奶，并在上面撒上小颗粒的肉桂粉末。
+                    </p>
+                </div>
+                <div>
+                    <h3>焦糖玛奇朵</h3>
+                    <img src="https://bkimg.cdn.bcebos.com/pic/cdbf6c81800a19d8854cc06a31fa828ba61e4615?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U4MA==,xp_5,yp_5" class="coffee" />
+                    <p>
+                        焦糖玛奇朵（英文：Caramel Macchiato）是在香浓热牛奶上加入浓缩咖啡、香草，再淋上纯正焦糖而制成的饮品，融合三种不同口味。Macchiato意大利文，意思是“烙印”和“印染”，中文音译“玛奇朵”。“Caramel”意思是焦糖。焦糖玛琪朵，寓意“甜蜜的印记”。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div id="foot">
+            版权所有©韦仲茜
+        </div>
+    </div>
+</body>
+
+</html>
