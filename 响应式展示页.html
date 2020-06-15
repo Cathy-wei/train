@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <title>基于boostrap的个人展示页</title>
+</head>
+<style>
+    #container {
+        /* display: flex;
+        flex-direction: column; */
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+    
+    #head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 200px;
+        background-color: rgb(144, 214, 216);
+    }
+    
+    #left {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #left h4 {
+        padding-left: 10px;
+        font-weight: bold;
+    }
+    
+    #right a {
+        display: inline-block;
+        padding-left: 10px;
+        text-decoration: none;
+        color: black;
+    }
+    
+    #right a:hover {
+        color: white;
+    }
+    
+    #box {
+        /* display: flex;
+        flex-direction: column; */
+        text-align: center;
+        /* margin: 20px; */
+    }
+    
+    .border {
+        width: 60px;
+        height: 8px;
+        margin: 10px auto;
+        background-color: #4b7c7d;
+    }
+    /*     
+    .pics {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        margin: auto 60px;
+        padding: 10px;
+    } */
+    
+    .pics {
+        background-color: #c0f1f291;
+        border: #6eb7b9 solid 10px;
+        border-radius: 5px;
+        padding: 0px;
+        margin: 20px 0px;
+        box-shadow: 8px 5px 20px 0px #b1adad;
+    }
+    
+    .pics>img {
+        width: 100%;
+    }
+    
+    #foot {
+        text-align: center;
+        height: max-content;
+        background-color: #05898b;
+    }
+    
+    #foo {
+        color: rgb(255, 255, 255);
+        padding: 30px 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #copyright {
+        text-align: center;
+        color: white;
+        margin: 0px 200px;
+        border-top: rgb(16, 100, 100) solid 2px;
+    }
+</style>
+
+<body style="margin: 0px;">
+    <div id="head">
+        <div id="left">
+            <img src="https://tupian.qqw21.com/article/UploadPic/2020-5/2020592210772119.jpg" alt="头像" width="40px" style="border-radius: 40px;  ">
+            <h4>极客大叔的爱好</h4>
+        </div>
+        <div id="right">
+            <a href="#movie">喜欢的电影</a>
+            <a href="#book">喜欢的书</a>
+            <a href="#">关于</a>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <div id="box" class="row">
+            <div class="col-md-12">
+                <h3 id="movie">喜欢的电影</h3>
+                <div class="border"></div>
+                <div class="lists">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+                            <img src="https://dss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3717282104,1079711651&fm=58&s=6A292DC0420F22FA2A73CB08030040CD" alt="寄生虫" />
+                            <h4>寄生虫</h4>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+                            <img src="https://imgsrc.baidu.com/baike/pic/item/7e3e6709c93d70cf6b75fda9f5dcd100bba12b82.jpg" alt="海王" />
+                            <h4>海王</h4>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+                            <img src="https://bkimg.cdn.bcebos.com/pic/d043ad4bd11373f096e98e30a20f4bfbfaed044e?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2UxODA=,xp_5,yp_5" alt="绣春刀" />
+                            <h4>绣春刀</h4>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+                            <img src="https://bkimg.cdn.bcebos.com/pic/9d82d158ccbf6c8134f2f300b03eb13532fa4015?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2UyNzI=,xp_5,yp_5" alt="侏罗纪世界2" />
+                            <h4>侏罗纪世界2</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h3 id="book">喜欢的书</h3>
+                <div class="border"></div>
+                <div class="lists">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+
+                            <img src="https://img3.doubanio.com/view/subject/l/public/s1142423.jpg" alt="断头王后" />
+                            <h4>断头王后</h4>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+                            <img src="https://bkimg.cdn.bcebos.com/pic/4b90f603738da97733b35ca3be51f8198718e39e?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2UyNzI=,xp_5,yp_5" alt="月亮与六便士" />
+                            <h4>月亮与六便士</h4>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592219662627&di=83ae3cda455e33332f1851185cdd1cfc&imgtype=0&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D2866068669%2C784947788%26fm%3D214%26gp%3D0.jpg" alt="黄金时代" />
+                            <h4>黄金时代</h4>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="pics">
+                            <img src="https://bkimg.cdn.bcebos.com/pic/8d5494eef01f3a292bb0641c9525bc315d607ce3?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U5Mg==,xp_5,yp_5" alt="经济学原理" />
+                            <h4>经济学原理</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="foot">
+        <div id="foo">
+            <p>王小波说他是一只特立独行的猪，那我就当一只特立独行的鸟吧。交个朋友么，扫下右边的二维码。</p>
+            <img src="https://bkimg.cdn.bcebos.com/pic/2934349b033b5bb571dc8c5133d3d539b600bc12?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U4MA==,xp_5,yp_5" width="100px" alt="二维码" />
+        </div>
+        <div id="copyright">版权所有©韦仲茜</div>
+    </footer>
+
+</body>
+
+</html>
