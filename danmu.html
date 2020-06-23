@@ -66,9 +66,7 @@
     
     .text {
         position: absolute;
-        border: #d077f3 solid 2px;
         border-radius: 3px;
-        font-size: 18px;
     }
     
     * {
@@ -103,11 +101,13 @@
                 var top = Math.floor(40 + Math.random() * ($screen.height() - 40)); // Math.random() * $screen.height() + 40;
                 var getcolor = '#' + Math.floor(Math.random() * 0xffffff).toString(16);
                 var speed = 2000 + 10000 * Math.random();
+                var size = Math.floor(10 + Math.random() * 30);
                 console.log(speed);
                 $content.css({
                     top: top + "px",
                     left: 80,
-                    color: getcolor
+                    color: getcolor,
+                    "font-size": size
                 });
                 $('.contents').append($content);
                 $content.animate({
