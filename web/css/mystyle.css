@@ -1,0 +1,374 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body,
+html {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: rgb(95, 158, 160);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fdb4c0;
+}
+
+header {
+    line-height: 60px;
+    top: 0px;
+    position: sticky;
+    height: 60px;
+    z-index: 10;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 12px 0px #00000057;
+}
+
+#top {
+    position: absolute;
+    z-index: 99999;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #5f9ea0;
+}
+
+.nav {
+    width: 1200px;
+    margin: 0 auto;
+    /* background-color: rgb(238, 223, 195); */
+    height: 100%;
+}
+
+
+/* .nav a {
+    color: black;
+    text-decoration: none;
+} */
+
+.nav h1 {
+    /* width: 150px; */
+    float: left;
+}
+
+.nav img {
+    vertical-align: text-bottom;
+}
+
+.nav ul {
+    float: right;
+}
+
+.nav ul li {
+    display: inline;
+    padding: 10px;
+}
+
+.nav ul li:hover {
+    color: #fdb4c0;
+    border-bottom: solid #5f9ea0 2px;
+}
+
+
+/* #top {
+    margin-left: 31px;
+} */
+
+#content {
+    width: 1200px;
+    margin: 0 auto;
+    /* background-color: rgb(173, 166, 166); */
+}
+
+.banner {
+    position: relative;
+    /*相对定位 给绝对定位位置参考*/
+    width: 100%;
+    height: 600px;
+    /* float: left; */
+}
+
+.banner .item {
+    display: none;
+    /*隐藏元素*/
+    position: absolute;
+    /* 绝对定位*/
+    width: 100%;
+    height: 400px;
+    top: 0px;
+    left: 0;
+}
+
+.bannerTitle {
+    position: absolute;
+    /* left: 440px; */
+    top: 120px;
+    width: 100%;
+    color: #ffffff;
+}
+
+.bannerTitle p {
+    text-align: center;
+    font-size: 60px;
+    font-family: -webkit-pictograph;
+}
+
+.bannerTitle .little {
+    font-size: 20px;
+    width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+    border: solid #ffffff 1px;
+}
+
+ul {
+    list-style-type: none;
+    /*清除默认列表样式 ....*/
+    margin: 0;
+    padding: 0;
+    /*内外编剧清除*/
+}
+
+.lunbo {
+    width: 100%;
+    height: 600px;
+}
+
+
+/*左右按钮的属性设置*/
+
+.lr-tab .btn {
+    position: absolute;
+    top: 250px;
+    width: 41px;
+    height: 69px;
+    background: url("https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png");
+}
+
+.lr-tab .left {
+    left: 0px;
+    background-position-x: -83px;
+}
+
+.lr-tab .right {
+    right: 0px;
+    background-position-x: -125px;
+}
+
+
+/*左右按钮触碰事件*/
+
+.lr-tab .left:hover {
+    background-position-x: 0px;
+}
+
+.lr-tab .right:hover {
+    background-position-x: -41px;
+}
+
+
+/*圆形按钮属性设定*/
+
+.tab-btn {
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+    width: 150px;
+    height: 30px;
+    top: 520px;
+}
+
+.tab-btn .btn {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #00000048;
+    /* border: 2px solid #e7e6e6; */
+    /*边框*/
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+
+/*圆形按钮触碰事件*/
+
+.tab-btn .btn:hover {
+    background: #ffffff;
+    /* border-color: #7f7f7f; */
+    cursor: pointer;
+}
+
+.tab-btn .active {
+    background: #ffffff;
+    /* border-color: #7f7f7f; */
+}
+
+#content .title {
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 80px auto;
+    width: fit-content;
+    border-bottom: solid cadetblue 10px
+}
+
+#content .dd {
+    width: 70%;
+    height: 300px;
+    margin: 0px auto;
+    padding: 20px;
+    /* background-color: #b294cf; */
+}
+
+.dd p {
+    font-size: 13px;
+    color: #5a5a5a;
+}
+
+.con .about {
+    float: right;
+    width: 400px;
+}
+
+.con .about p {
+    float: right;
+    text-indent: 2em;
+    font-size: 13px;
+    margin: 10px auto;
+    line-height: 26px;
+}
+
+.bt {
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+    border: solid #5f9ea0 2px;
+}
+
+.bt:hover {
+    color: white;
+    background-color: #5f9ea0;
+}
+
+.dd #cc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+#step {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+#step div {
+    padding: 0px 40px;
+    margin: 10px;
+    font-size: 13px;
+    text-align: center;
+    /* border: dashed #299a85 2px; */
+    /* border-radius: 50%; */
+}
+
+#step div img {
+    width: 60px;
+    padding: 20px;
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0px 0px 20px #00000038;
+}
+
+#step div img:hover {
+    box-shadow: 0 0 20px #0000006b;
+    /* background-color: #5f9ea0; */
+}
+
+#news {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    width: 100%;
+}
+
+#news div {
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 20px #a5a3a3;
+    border-radius: 20px;
+}
+
+#news div p {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#pages {
+    list-style-type: none;
+    float: right;
+    margin-top: 20px;
+}
+
+#pages li {
+    display: inline-block;
+    border: solid #5f9ea0 2px;
+    color: #5f9ea0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+#pages li:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #5f9ea0;
+}
+
+#pages li.active {
+    color: white;
+    background-color: #5f9ea0;
+}
+
+footer {
+    /* bottom: 0px; */
+    background-color: black;
+    height: 300px;
+    color: white;
+}
+
+footer #footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer .foo {
+    padding: 50px;
+    margin: 0px 30px;
+    /* float: left; */
+    font-size: 13px;
+    height: fit-content;
+}
+
+footer a {
+    color: white;
+}
+
+footer h3 {
+    padding-bottom: 20px;
+}
+
+footer div p {
+    padding-bottom: 10px;
+}
+
+footer>p {
+    font-size: 13px;
+    text-align: center;
+}

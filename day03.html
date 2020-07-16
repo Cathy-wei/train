@@ -10,7 +10,7 @@
         flex-direction: column;
     }
     
-    h1 {
+    #head {
         background-color: #8673ca;
         padding: 20px;
         margin-top: 0px;
@@ -34,6 +34,8 @@
     
     #menu ul {
         padding: 0px;
+        /* position: sticky; */
+        top: 0px;
     }
     
     #menu ul>li {
@@ -47,7 +49,7 @@
     }
     
     #menu ul>li:hover {
-        background-color: #a99dd1ad;
+        background-color: #4b4b4b13;
         cursor: pointer;
     }
     
@@ -81,13 +83,17 @@
     #items p::first-letter {
         font-size: 32px;
     }
+    
+    .active {
+        background-color: yellow;
+    }
 </style>
 
 <body style="margin: 0px;">
     <div id="container">
 
 
-        <h1>☕来杯咖啡吗？</h1>
+        <h1 id="head">☕来杯咖啡吗？</h1>
 
         <div id="content">
             <div id="menu">
@@ -162,6 +168,25 @@
             版权所有©韦仲茜
         </div>
     </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#menu ul>li').click(function() {
+                $('#menu ul>li').removeClass('active');
+                $(this).addClass('active');
+            })
+        })
+        window.onscroll = function() {
+            var scroll = document.documentElement.scrollTop;
+            var offset = $('#head').height();
+            console.log(scroll, offset);
+            if (scroll > offset) {
+                $('#menu').css('position', 'fixed');
+            } else {
+                $('#menu').css('position', 'static');
+            }
+        }
+    </script>
 </body>
 
 </html>
