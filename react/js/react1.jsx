@@ -125,6 +125,7 @@ class App extends React.Component {
     render() {
         const { cards, loading, error } = this.state
         return (<div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <h2 style={{margin:'20px auto'}}>github热门项目</h2>
             <div className="container">
                 <Header onClick={this.handleNavClick}>
                 </Header>
