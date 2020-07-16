@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/mystyle.css" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/wow.min.js"></script>
+    <title>新闻详情</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <header>
+            <div id="top"></div>
+            <div class="nav">
+                <h1>
+                    <a href="index.html"><img src="../imgs/favicon.ico" width="40px" /> 一花一世界</a>
+                </h1>
+                <ul>
+                    <li>
+                        <a href="index.html">网站首页</a>
+                    </li>
+                    <li>
+                        <a href="news.html">新闻中心</a>
+                    </li>
+                    <li>
+                        <a href="index.html#content">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="about.html">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+
+        <div id="content">
+
+            <h2 style="text-align: center;margin: 70px auto 20px;">网上花店青睐情人节</h2>
+
+
+            <div class="article">
+                <ul class="info">
+                    <li>来源：</li>
+                    <li>作者:flowers-100</li>
+                    <li>发布时间: 1998天前</li>
+                    <li>313 次浏览</li>
+                </ul>
+                <p>2000年，李xx在网上开了一家名叫“花好月圆”的网上花店，玫瑰象征爱情，情人节是网上花店较红火的日子。</p>
+                <pre>  
+    2000年，李XX在网上开了一家名叫“花好月圆”的网上花店，玫瑰象征爱情，情人节是网上花店较红火的日子。
+    春节前夕，在网上接到情人节的**个订单，进了正月，李XX就开始忙活起来，接单、订货、雇送花人，忙得不
+亦乐乎。到2月13日，李xx一下子就接到济 南市区内20多笔订单。取货、开大包装、去刺、重新包装，一道道工序
+下来，为这20多笔订单，她一直忙到今天凌晨2点多。
+                </pre>
+            </div>
+
+        </div>
+        <div style="height: 150px;"></div>
+
+    </div>
+    <footer>
+        <div id="footer">
+            <div class="foo">
+                <h3>联系我们</h3>
+                <p>地址：中国福建省福州市经济技术开发区</p>
+                <p>电话：1123footer12323428</p>
+                <p>传真：112312323428</p>
+                <p>电子邮箱：4243435443@qq.com</p>
+            </div>
+            <div class="foo">
+                <h3>公司动态</h3>
+                <p><a href="#">信息公开</a></p>
+                <p><a href="#">最近新闻</a></p>
+                <p><a href="#">信息公开</a></p>
+
+            </div>
+            <div class="foo">
+                <h3>帮助与支持</h3>
+                <p><a href="#">帮助中心</a></p>
+                <p><a href="#">联系客服</a></p>
+                <p><a href="#">文档资源</a></p>
+
+            </div>
+        </div>
+
+        <p>闽ICP备18027236号</p>
+        <p>Copyright © 2019 花卉集团股份有限公司 版权所有</p>
+    </footer>
+
+    </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/web.js">
+    </script>
+    <script>
+        new WOW().init();
+        window.onscroll = function() {
+            var scroll = document.documentElement.scrollTop || document.body.scrollTop; // 获取滚动条的高度
+            var sch = document.body.scrollHeight || document.documentElement.scrollHeight; // 页面总高度
+            var clh = document.documentElement.clientHeight || document.body.clientHeight; // 浏览器视口高度
+            var height = sch - clh; // 可滚动的高度
+            // console.log(scroll)
+            $('#top').css('width', (scroll / height) * 100 + '%');
+
+        }
+    </script>
+</body>
+
+</html>

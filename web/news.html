@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/mystyle.css" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/wow.min.js"></script>
+    <title>新闻列表</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <header>
+            <div id="top"></div>
+            <div class="nav">
+                <h1>
+                    <a href="index.html"><img src="../imgs/favicon.ico" width="40px" /> 一花一世界</a>
+                </h1>
+                <ul>
+                    <li>
+                        <a href="index.html">网站首页</a>
+                    </li>
+                    <li>
+                        <a href="news.html">新闻中心</a>
+                    </li>
+                    <li>
+                        <a href="index.html#content">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="about.html">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+
+
+        <div id="content">
+            <div id="newsCon">
+
+                <h1 class="title">新闻中心</h1>
+
+                <!-- <div id="newslist" class="wow slideInRight " data-wow-duration="2s">
+                        
+                    </div> -->
+                <table id="newslist">
+                    <tr>
+                        <td>
+                            <img src="../imgs/1.jpg" alt="">
+                            <p class="head"><a href="newsdetail.html">非洲菊有了“本地户口” 花店里的很多都来自文成</a></p>
+                            <p class="date">2013-05-23</p>
+                            <p class="contents">玲珑粉、黄金海岸、白马*子,这些不是地名、人名，而是文成黄坦鲜切花生产基地出产的非洲菊的花名。</p>
+                        </td>
+                        <td>
+                            <img src="../imgs/1.jpg" alt="">
+                            <p class="head"><a href="newsdetail.html">非洲菊有了“本地户口” 花店里的很多都来自文成</a></p>
+                            <p class="date">2013-05-23</p>
+                            <p class="contents">玲珑粉、黄金海岸、白马*子,这些不是地名、人名，而是文成黄坦鲜切花生产基地出产的非洲菊的花名。</p>
+                        </td>
+                        <td>
+                            <img src="../imgs/1.jpg" alt="">
+                            <p class="head"><a href="newsdetail.html">非洲菊有了“本地户口” 花店里的很多都来自文成</a></p>
+                            <p class="date">2013-05-23</p>
+                            <p class="contents">玲珑粉、黄金海岸、白马*子,这些不是地名、人名，而是文成黄坦鲜切花生产基地出产的非洲菊的花名。</p>
+                        </td>
+                    </tr>
+                </table>
+                <ul id="pages" class="wow fadeInUp" data-wow-delay="0.5s">
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+            <!-- <div class="wow slideInRight dd" data-wow-duration="2s">wqe</div>
+                <div class="wow slideInRight dd" data-wow-offset="10">iteration重复次数</div> -->
+
+        </div>
+        <footer>
+            <div id="footer">
+                <div class="foo">
+                    <h3>联系我们</h3>
+                    <p>地址：中国福建省福州市闽侯县闽江学院</p>
+                    <p>电话：1123footer12323428</p>
+                    <p>传真：112312323428</p>
+                    <p>电子邮箱：4243435443@qq.com</p>
+                </div>
+                <div class="foo">
+                    <h3>公司动态</h3>
+                    <p><a href="#">信息公开</a></p>
+                    <p><a href="#">最近新闻</a></p>
+                    <p><a href="#">信息公开</a></p>
+
+                </div>
+                <div class="foo">
+                    <h3>帮助与支持</h3>
+                    <p><a href="#">帮助中心</a></p>
+                    <p><a href="#">联系客服</a></p>
+                    <p><a href="#">文档资源</a></p>
+
+                </div>
+            </div>
+
+            <p>闽ICP备18027236号</p>
+            <p>Copyright © 2019 花卉集团股份有限公司 版权所有</p>
+        </footer>
+
+    </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script type="text/javascript" src="js/web.js"> -->
+    </script>
+    <script>
+        new WOW().init();
+        window.onscroll = function() {
+            var scroll = document.documentElement.scrollTop || document.body.scrollTop; // 获取滚动条的高度
+            var sch = document.body.scrollHeight || document.documentElement.scrollHeight; // 页面总高度
+            var clh = document.documentElement.clientHeight || document.body.clientHeight; // 浏览器视口高度
+            var height = sch - clh; // 可滚动的高度
+            // console.log(scroll)
+            $('#top').css('width', (scroll / height) * 100 + '%');
+
+        }
+
+        function get(page) {
+            $('#loading').css('display', 'block')
+            axios.get('http://mock-api.com/wna2YXK1.mock/products?page=' + page)
+                .then(function(res) {
+                    console.log('res', res.data);
+                    var i;
+                    var item;
+
+                    // $('#newslist tr ').remove();
+
+                    for (i = 0; i < res.data.length; i++) {
+                        item = res.data[i];
+                        $('#newslist ').append('<tr>' +
+                            '<td> <img  src="' + item.imgurl + ' "' +
+                            '<p class="head"><a href="newsdetail.html?id=' + item.id + '">' + item.title + '</a></p>' +
+                            '<p class="date">' + item.datetime + '</p>' +
+                            '<p class="contents">' + item.content + '</p>' +
+                            ' </td>' + '</tr>');
+                    }
+
+                    // $('#loading').css('display', 'none')
+                })
+                .catch(function(e) {
+                    console.log('e', e);
+                })
+        }
+        get(1);
+        $('#pages li').click(function() {
+            var page = Number($(this).text());
+            get(page);
+            $('#pages li').removeClass('active');
+            $(this).addClass('active')
+        })
+    </script>
+</body>
+
+</html>
