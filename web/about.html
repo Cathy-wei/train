@@ -9,12 +9,6 @@
     <script src="js/wow.min.js"></script>
     <!--引用百度地图API-->
     <style type="text/css">
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        
         .iw_poi_title {
             color: #CC5522;
             font-size: 14px;
@@ -32,7 +26,7 @@
             word-wrap: break-word
         }
     </style>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
     <title>联系我们</title>
 </head>
 
@@ -65,11 +59,20 @@
 
         <div id="content">
             <h1 class="title">联系我们</h1>
-            <div class="dd">
+            <div id="connect">
 
                 <!--百度地图容器-->
-                <div style="width:400px;height:400px;border:#ccc solid 1px;" id="dituContent"></div>
-                <div style="position: absolute;right: 300px;bottom: -200px;">
+                <div style="width:400px;height:400px;border:#ccc solid 1px;margin-right: 60px;" id="dituContent"></div>
+                <div style="margin-left: 60px;">
+                    <div>
+                        <h2>花卉集团股份有限公司</h2>
+                        <p>电子邮箱：xxxxxx@xxxx.com.cn</p>
+                        <p>联系电话：010-XXXX0000</p>
+                        <p>客服电话：400-100-XX00</p>
+                        <p>官网地址：http://www.xxxxx.com.cn</p>
+                        <p>公司地址：某某省某某市***经济技术开发区</p>
+
+                    </div><br>
                     <form>
                         <p> 您的姓名：</p>
                         <p><input type="text" name="name" id="name"></p>
@@ -121,6 +124,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="js/web.js">
     </script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
     <script>
         new WOW().init();
         window.onscroll = function() {
@@ -181,8 +185,8 @@
 
         //标注点数组
         var markerArr = [{
-            title: "我的标记",
-            content: "我的备注",
+            title: "我的位置",
+            content: "花卉集团股份有限公司",
             point: "119.280516|26.041629",
             isOpen: 0,
             icon: {
@@ -248,7 +252,7 @@
         }
         //创建一个Icon
         function createIcon(json) {
-            var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+            var icon = new BMap.Icon("http://map.baidu.com/image/us_mk_icon.png", new BMap.Size(json.w, json.h), {
                 imageOffset: new BMap.Size(-json.l, -json.t),
                 infoWindowOffset: new BMap.Size(json.lb + 5, 1),
                 offset: new BMap.Size(json.x, json.h)

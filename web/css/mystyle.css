@@ -430,6 +430,29 @@ ul {
     border-radius: 2px;
 }
 
+#connect {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#connect>div p {
+    font-size: 13px;
+    margin: 6px 0px;
+}
+
+#connect input {
+    width: 100%;
+    height: 20px;
+    border: solid #fdb4c0 2px;
+}
+
+#content textarea {
+    width: 100%;
+    border: solid #fdb4c0 2px;
+}
+
 footer {
     /* bottom: 0px; */
     background-color: black;
