@@ -18,45 +18,53 @@ const Header = (props) => {
         'Python'
     ]
 
-    return (<div>
-        <Container>
-            <Nav className="justify-content-center" style={{ border: 'soild black' }} variant="tabs" defaultActiveKey="All" onSelect={(selectedKey) => props.onClick(selectedKey)} >
-                {menuItems.map((item, key) => <Nav.Item key={key}><Nav.Link eventKey={item} >{item}</Nav.Link></Nav.Item>)}
-            </Nav>
-        </Container>
-    </div>)
+    return (
+        <div>
+            <Container>
+                <Nav className="justify-content-center" style={{ border: 'soild black' }} variant="tabs" defaultActiveKey="All" onSelect={(selectedKey) => props.onClick(selectedKey)} >
+                    {menuItems.map((item, key) => <Nav.Item key={key}><Nav.Link eventKey={item} >{item}</Nav.Link></Nav.Item>)}
+                </Nav>
+            </Container>
+        </div>
+    )
 }
-const Content = (props) => (<div>
-    <Container>
-        {props.children}
-    </Container>
-</div>)
-const Footer = (props) => (<div>
-    <Container>
-        {props.children}
-    </Container>
-</div>)
-const RepoCard = (props) => (<Card border="primary" style={{ marginTop: '8px', marginBottom: '8px' }}>
-    <Card.Header className="text-center bg-white font-weight-bold">{props.no}</Card.Header>
-    <Card.Body className="bg-light">
-        <Card.Img src="../imgs/图片.png" data-src={props.img} className="lazyload" />
-        <Card.Title className="text-center"><Card.Link href={props.url} className="text-danger" target="_blank">{props.title}</Card.Link></Card.Title>
-        <ListGroup className="list-group-flush">
-            <ListGroupItem className="bg-light">
-                <Card.Text><i className="fa fa-user fa-lg fa-fw" style={{ color: 'orange' }}></i>{props.author}</Card.Text>
-            </ListGroupItem>
-            <ListGroupItem className="bg-light">
-                <Card.Text><i className="fa fa-star fa-lg fa-fw" style={{ color: 'yellow' }}></i>{props.stars}</Card.Text>
-            </ListGroupItem>
-            <ListGroupItem className="bg-light">
-                <Card.Text><i className="fa fa-code-fork fa-lg fa-fw" style={{ color: 'lightblue' }}></i>{props.forks}</Card.Text>
-            </ListGroupItem>
-            <ListGroupItem className="bg-light">
-                <Card.Text><i className="fa fa-warning fa-lg fa-fw" style={{ color: 'purple' }}></i>{props.issues}</Card.Text>
-            </ListGroupItem>
-        </ListGroup>
-    </Card.Body>
-</Card>)
+const Content = (props) => (
+    <div>
+        <Container>
+            {props.children}
+        </Container>
+    </div>
+)
+const Footer = (props) => (
+    <div>
+        <Container>
+            {props.children}
+        </Container>
+    </div>
+)
+const RepoCard = (props) => (
+    <Card border="primary" style={{ marginTop: '8px', marginBottom: '8px' }}>
+        <Card.Header className="text-center bg-white font-weight-bold">{props.no}</Card.Header>
+        <Card.Body className="bg-light">
+            <Card.Img src="../imgs/图片.png" data-src={props.img} className="lazyload" />
+            <Card.Title className="text-center"><Card.Link href={props.url} className="text-danger" target="_blank">{props.title}</Card.Link></Card.Title>
+            <ListGroup className="list-group-flush">
+                <ListGroupItem className="bg-light">
+                    <Card.Text><i className="fa fa-user fa-lg fa-fw" style={{ color: 'orange' }}></i>{props.author}</Card.Text>
+                </ListGroupItem>
+                <ListGroupItem className="bg-light">
+                    <Card.Text><i className="fa fa-star fa-lg fa-fw" style={{ color: 'yellow' }}></i>{props.stars}</Card.Text>
+                </ListGroupItem>
+                <ListGroupItem className="bg-light">
+                    <Card.Text><i className="fa fa-code-fork fa-lg fa-fw" style={{ color: 'lightblue' }}></i>{props.forks}</Card.Text>
+                </ListGroupItem>
+                <ListGroupItem className="bg-light">
+                    <Card.Text><i className="fa fa-warning fa-lg fa-fw" style={{ color: 'purple' }}></i>{props.issues}</Card.Text>
+                </ListGroupItem>
+            </ListGroup>
+        </Card.Body>
+    </Card>
+)
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -66,7 +74,6 @@ class App extends React.Component {
     }
     handleNavClick = async (type = 'all', page = 1) => {
         const { cards } = this.state
-        console.log('type', type)
         var url = ''
         switch (type) {
             case 'Javascript':
@@ -91,8 +98,7 @@ class App extends React.Component {
                 beforeState.cards = []
             }
             this.setState(beforeState)
-            const res = await axios.get(url)
-            console.log('res', res.data)
+            const res = await axios.get(url) 
             const newCards = res.data.items.map((item, key) => ({
                 no: '#' + (page === 1 ? 1 + key : cards.length + 1 + key),
                 img: item.owner.avatar_url,
@@ -124,47 +130,49 @@ class App extends React.Component {
     }
     render() {
         const { cards, loading, error } = this.state
-        return (<div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            <h2 style={{margin:'20px auto'}}>github热门项目</h2>
-            <div className="container">
-                <Header onClick={this.handleNavClick}>
-                </Header>
-                <Content>
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+                <h2 style={{margin:'20px auto'}}>github热门项目</h2>
+                <div className="container">
+                    <Header onClick={this.handleNavClick}>
+                    </Header>
+                    <Content>
 
-                    <Row className="justify-content-around">
-                        {cards.map((item, key) => <Col sm={6} md={4} lg={3} key={key}>
-                            <RepoCard no={item.no}
-                                img={item.img}
-                                title={item.title}
-                                author={item.author}
-                                stars={item.stars}
-                                forks={item.forks}
-                                issues={item.issues}
-                                url={item.url}
-                            />
-                        </Col>)}
-                    </Row>
-                    <div className="text-center">
-                        {error && <Alert variant="danger" >{error.response.status} {error.response.statusText}</Alert>}
-                    </div>
-                    <div className="text-center">
-                        <Button onClick={this.loadMore} disabled={loading}> {loading && <Spinner
-                            as="span"
-                            animation="grow"
-                            size="sm"
-                            role="status"
-                            aria-hidden="true"
-                        />} 加载更多</Button>
-                    </div>
-                </Content>
-                <Footer>
-                    <div className="text-center text-black jumbotron bg-light">
-                        <h5>版权所有 &copy; 韦仲茜</h5>
-                    </div>
-                </Footer>
+                        <Row className="justify-content-around">
+                            {cards.map((item, key) => <Col sm={6} md={4} lg={3} key={key}>
+                                <RepoCard no={item.no}
+                                    img={item.img}
+                                    title={item.title}
+                                    author={item.author}
+                                    stars={item.stars}
+                                    forks={item.forks}
+                                    issues={item.issues}
+                                    url={item.url}
+                                />
+                            </Col>)}
+                        </Row>
+                        <div className="text-center">
+                            {error && <Alert variant="danger" >{error.response.status} {error.response.statusText}</Alert>}
+                        </div>
+                        <div className="text-center">
+                            <Button onClick={this.loadMore} disabled={loading}> {loading && <Spinner
+                                as="span"
+                                animation="grow"
+                                size="sm"
+                                role="status"
+                                aria-hidden="true"
+                            />} 加载更多</Button>
+                        </div>
+                    </Content>
+                    <Footer>
+                        <div className="text-center text-black jumbotron bg-light">
+                            <p>版权所有 &copy; 韦仲茜</p>
+                        </div>
+                    </Footer>
+                </div>
+
             </div>
-
-        </div>)
+        )
     }
 }
 ReactDOM.render(
