@@ -342,20 +342,30 @@ ul {
 
 #newslist {
     margin: 0 auto;
-    /* border-collapse: collapse; */
-    border-spacing: 40px 20px;
+    border-collapse: collapse;
+    /* border-spacing: 40px 20px; */
+    border: solid #5f9ea0 2px;
+    width: 80%;
+    text-align: center;
+}
+
+#newslist tr {
+    border: solid #5f9ea0 2px;
+}
+
+#newslist tr:hover {
+    background-color: #dcdcdc6e;
 }
 
 #newslist tr td {
-    padding: 20px;
+    padding: 10px;
     /* background-color: #bacfcf; */
-    border: solid #5f9ea0 2px;
     font-size: 13px;
 }
 
 #newslist img {
-    width: 200px;
-    border-radius: 50%;
+    width: 100px;
+    /* border-radius: 50%; */
 }
 
 #newslist tr td .head {
@@ -382,7 +392,7 @@ ul {
 
 #pages {
     list-style-type: none;
-    margin: 10px auto;
+    margin: 50px auto;
     width: fit-content;
 }
 
@@ -464,6 +474,8 @@ footer #footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
 }
 
 footer .foo {
